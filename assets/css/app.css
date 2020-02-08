@@ -16937,6 +16937,11 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.no-animation {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
 .font-size-0-7 {
   font-size: 0.7em;
 }
