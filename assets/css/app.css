@@ -23,7 +23,6 @@
 }
 
 .terminal-text-body {
-  min-height: 250px;
   background-color: #282c34;
   padding: 10px;
   color: #f0f0f0 !important;
@@ -16938,6 +16937,14 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.font-size-0-7 {
+  font-size: 0.7em;
+}
+
+.font-size-1 {
+  font-size: 1em;
+}
+
 .font-size-1-9 {
   font-size: 1.9em;
 }
@@ -16956,5 +16963,54 @@ readers do not read off random characters that represent icons */
 
 .font-size-5 {
   font-size: 5em;
+}
+
+.blinking {
+  -webkit-animation: blinkingText .5s infinite;
+          animation: blinkingText .5s infinite;
+}
+
+@-webkit-keyframes blinkingText {
+  0% {
+    color: #ffffff;
+  }
+
+  49% {
+    color: #ffffff;
+  }
+
+  60% {
+    color: #282c34;
+  }
+
+  99% {
+    color: #282c34;
+  }
+
+  100% {
+    color: #ffffff;
+  }
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #ffffff;
+  }
+
+  49% {
+    color: #ffffff;
+  }
+
+  60% {
+    color: #282c34;
+  }
+
+  99% {
+    color: #282c34;
+  }
+
+  100% {
+    color: #ffffff;
+  }
 }
 

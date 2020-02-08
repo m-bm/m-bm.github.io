@@ -9,9 +9,11 @@ require('@fortawesome/fontawesome-free')
 hljs.configure({useBR: true});
 
 
-var typed = new Typed('#typed', {
-  stringsElement: '#typed-strings',
-  backDelay: 3000,
-  loop:true,
-  typeSpeed:10
-});
+if ($('#typed').length != 0) {
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    backDelay: 3000,
+    loop:true,
+    typeSpeed:10
+  });
+}

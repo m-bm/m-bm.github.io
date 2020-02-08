@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks!
+    -->
+
+    <!-- SEO -->
+    <title>Medard Mandane | Laravel Workshop</title>
+    <meta name="description" content="Learn WebSlides in simple steps starting from basic to advanced concepts with examples.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" type='text/css' media='all' href="../assets/css/app.css">
+    <link rel="stylesheet" type='text/css' media='all' href="../assets/css/webslides.css">
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="https"> <!-- EDIT -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides Demos"> <!-- EDIT -->
+    <meta property="og:description" content="Beautiful HTML presentations and websites made with WebSlides."> <!-- EDIT -->
+    <meta property="og:updated_time" content="2017-01-04T17:22:34"> <!-- EDIT -->
+    <meta property="og:image" content="../static/images/share-webslides.jpg" > <!-- EDIT -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+    <main role="main">
+      <article id="webslides" class="vertical">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <!-- Slide 1 -->
+        <section class="py-5">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1 class="text-danger display-1">
+                <i class="fab fa-laravel"></i> Laravel Essentials Workshop
+            </h1>
+            <p class="mt-4 mb-2 text-intro">
+              <span class="d-block">Medard Mandane</span>
+              <small class="text-muted">Back-End Developer @ SparkPoint Innovations Inc.</small>
+            </p>
+            <nav>
+               <ul>
+                 <li><a target="_blank" class="text-reset" href="https://www.linkedin.com/in/medardm/"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a></li>
+                 <li><a target="_blank" class="text-reset" href="https://github.com/medardm"><i class="fab fa-github fa-lg"></i> Github</a></li>
+               </ul>
+               <ul class="my-5">
+                 <li><a target="_blank" class="text-reset" href="https://sparkpoint.io">
+                   <img src="../assets/images/logos/sparkpoint.png" class="img-fluid" width="50" alt="">
+                 </a></li>
+                 <li><a target="_blank" class="text-reset" href="https://bicolit.org/">
+                   <img src="../assets/images/logos/bicolit.png" class="img-fluid bg-black" width="45" alt="">
+                 </a></li>
+               </ul>
+             </nav>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide py-5">
+          <div class="wrap size-50">
+            <div class="toc">
+                <h4>Table of Contents</h4>
+                <ol>
+                  <li>
+                    <a href="#slide=3" title="Go to Prerequisites">
+                      <span class="chapter">Prerequisites</span>
+                      <span class="toc-page">01</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=4" title="Go to Prerequisites">
+                      <span class="chapter">Installation</span>
+                      <span class="toc-page">02</span>
+                    </a>
+                  </li>
+                </ol>
+              </div>
+          </div>
+        </section>
+
+        <section class="py-5">
+          <div class="wrap">
+            <h1 class="">Prerequisites</h1>
+            <hr>
+            <div class="grid">
+              <div class="column pl-0 pt-0">
+                <ul>
+                  <li class="">
+                    <a target="_blank" href="https://getcomposer.org/download/" class="display-4">Composer</a> -
+                    <span>A Dependency Manager for PHP</span>
+                  </li>
+                  <li class="">
+                    <span class="">
+                      Local web server : <a target="_blank" href="http://www.wampserver.com/en/#download-wrapper" class="display-4">Wamp</a>, <a target="_blank" href="https://www.apachefriends.org/index.html" class="display-4">Xampp</a> or LAMP stack (for advanced users)
+                    </span>
+                  </li>
+                  <li class="mt-4">
+                    <span class="text-muted text-xs">
+                      * make sure <b>composer</b> is working and php is in your path
+                    </span>
+                    <div class="terminal-wrap mt-3 mx-0 fadeInUp w-50">
+                      <div class="terminal-title-bar m-0"><span class="title">Test</span></div>
+                      <div class="terminal-text-body">
+                        <p class="my-1">
+                          $ <span class="code language-bash p-0 d-inline">composer --version</span>
+                        </p>
+                        <p class="my-1 text-muted font-size-0-7">
+                          # <span class="code language-bash p-0 d-inline">should output composer version</span>
+                        </p>
+                        <p class="my-1">
+                          $ <span class="code language-bash p-0 d-inline">php -v</span><span class="blinking">|</span>
+                        </p>
+                        <p class="my-1 text-muted font-size-0-7">
+                          # <span class="code language-bash p-0 d-inline">should output php version</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/webslides.js"></script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <!-- <script defer src="../static/js/svg-icons.js"></script> -->
+
+  </body>
+</html>

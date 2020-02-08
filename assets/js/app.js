@@ -75107,12 +75107,15 @@ __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortaw
 highlight_js__WEBPACK_IMPORTED_MODULE_0___default.a.configure({
   useBR: true
 });
-var typed = new typed_js__WEBPACK_IMPORTED_MODULE_1___default.a('#typed', {
-  stringsElement: '#typed-strings',
-  backDelay: 3000,
-  loop: true,
-  typeSpeed: 10
-});
+
+if ($('#typed').length != 0) {
+  var typed = new typed_js__WEBPACK_IMPORTED_MODULE_1___default.a('#typed', {
+    stringsElement: '#typed-strings',
+    backDelay: 3000,
+    loop: true,
+    typeSpeed: 10
+  });
+}
 
 /***/ }),
 
