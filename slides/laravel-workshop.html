@@ -28,12 +28,11 @@
     <link rel="stylesheet" type='text/css' media='all' href="../assets/css/webslides.css">
 
     <!-- FACEBOOK -->
-    <meta property="og:url" content="https"> <!-- EDIT -->
+    <meta property="og:url" content="https://medardm.github.io/">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="WebSlides Demos"> <!-- EDIT -->
-    <meta property="og:description" content="Beautiful HTML presentations and websites made with WebSlides."> <!-- EDIT -->
-    <meta property="og:updated_time" content="2017-01-04T17:22:34"> <!-- EDIT -->
-    <meta property="og:image" content="../static/images/share-webslides.jpg" > <!-- EDIT -->
+    <meta property="og:title" content="Laravel Essentials Workshop">
+    <meta property="og:description" content="Webslides of my laravel essentials workshop.">
+    <!-- <meta property="og:image" content="" > -->
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#333333">
@@ -80,7 +79,7 @@
           <div class="wrap size-50">
             <div class="toc">
                 <h4>Table of Contents</h4>
-                <ol>
+                <ol class="">
                   <li>
                     <a href="#slide=3" title="Go to Prerequisites">
                       <span class="chapter">Prerequisites</span>
@@ -101,7 +100,7 @@
         <section class="py-5">
           <div class="wrap">
             <h1 class="">Prerequisites</h1>
-            <hr>
+            <hr class="m-3">
             <div class="grid">
               <div class="column pl-0 pt-0">
                 <ul>
@@ -111,27 +110,29 @@
                   </li>
                   <li class="">
                     <span class="">
-                      Local web server : <a target="_blank" href="http://www.wampserver.com/en/#download-wrapper" class="display-4">Wamp</a>, <a target="_blank" href="https://www.apachefriends.org/index.html" class="display-4">Xampp</a> or LAMP stack (for advanced users)
+                      Local web server : <a target="_blank" href="http://www.wampserver.com/en/#download-wrapper" class="display-4">Wamp</a>, <a target="_blank" href="https://www.apachefriends.org/index.html" class="display-4">Xampp</a> or LAMP stack
                     </span>
                   </li>
                   <li class="mt-4">
                     <span class="text-muted text-xs">
-                      * make sure <b>composer</b> is working and php is in your path
+                      * make sure <b>composer</b> and <b>php</b> is in your <code>$PATH</code>
                     </span>
-                    <div class="terminal-wrap mt-3 mx-0 fadeInUp w-50">
-                      <div class="terminal-title-bar m-0"><span class="title">Test</span></div>
+                    <div class="terminal-wrap mt-3 mx-0 fadeIn w-50">
+                      <div class="terminal-title-bar m-0">
+                        <!-- <span class="title">Test</span> -->
+                      </div>
                       <div class="terminal-text-body">
                         <p class="my-1">
                           $ <span class="code language-bash p-0 d-inline">composer --version</span>
                         </p>
                         <p class="my-1 text-muted font-size-0-7">
-                          # <span class="code language-bash p-0 d-inline">should output composer version</span>
+                          <span class="code language-bash p-0 d-inline text-muted"># should output composer version</span>
                         </p>
                         <p class="my-1">
                           $ <span class="code language-bash p-0 d-inline">php -v</span><span class="blinking">|</span>
                         </p>
                         <p class="my-1 text-muted font-size-0-7">
-                          # <span class="code language-bash p-0 d-inline">should output php version</span>
+                          <span class="code language-bash p-0 d-inline text-muted"># should output php version</span>
                         </p>
                       </div>
                     </div>
@@ -139,6 +140,50 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section class="slide py-5">
+          <div class="wrap">
+            <h1 class="">Installation</h1>
+            <hr class="m-3">
+            <ul class="">
+              <li>
+                <span class="font-size-1-5">
+                  Download laravel installer using composer
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-9">
+                    <!-- <p class="my-1 text-muted font-size-0-7">
+                      # <span class="code language-bash p-0 d-inline"></span>
+                    </p> -->
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">composer global require laravel/installer</span><span class="blinking">|</span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span class="font-size-1-5">
+                  Choose a folder and Initialize a new laravel project
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-9">
+                    <!-- <p class="my-1 text-muted font-size-0-7">
+                      # <span class="code language-bash p-0 d-inline"></span>
+                    </p> -->
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">laravel new laravel-workshop</span><span class="blinking">|</span>
+                    </p>
+                  </div>
+                </div>
+                <p class="my-1 text-muted font-size-1">
+                  <span class="p-0 d-inline text-muted">* make sure composer's system-wide vendor <code>bin</code> directory is in your <code>$PATH</code>, for more info, click <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">here</a></span>
+                </p>
+              </li>
+            </ul>
           </div>
         </section>
       </article>

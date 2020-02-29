@@ -8,4 +8,5 @@ mix.styles([
 mix
   .js('resources/js/app.js', 'assets/js')
   .js('resources/js/webslides.js', 'assets/js')
+  .js('resources/js/terminal.js', 'assets/js')
     .sass('resources/sass/app.scss', 'assets/css');
