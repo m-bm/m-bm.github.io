@@ -95,7 +95,13 @@
                   <li>
                     <a href="#slide=5" title="Go to Configuration">
                       <span class="chapter">Configuration</span>
-                      <span class="toc-page">02</span>
+                      <span class="toc-page">03</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=6" title="Go to Artisan">
+                      <span class="chapter">Introduction to Artisan</span>
+                      <span class="toc-page">04</span>
                     </a>
                   </li>
                 </ol>
@@ -151,7 +157,7 @@
         <!-- Installation -->
         <section class="slide py-2">
           <div class="wrap">
-            <h1 class="">Part 1: <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">Installation</a></h1>
+            <h1 class=""><a target="_blank" href="https://laravel.com/docs/6.x/installation">Installation</a></h1>
             <hr class="m-3">
             <ul class="">
               <li>
@@ -174,9 +180,6 @@
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-9">
-                    <!-- <p class="my-1 text-muted font-size-0-7">
-                      # <span class="code language-bash p-0 d-inline"></span>
-                    </p> -->
                     <p class="my-1">
                       $ <span class="code p-0 d-inline language-bash">laravel new laravel-workshop</span>
                     </p>
@@ -190,9 +193,6 @@
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-9">
-                    <!-- <p class="my-1 text-muted font-size-0-7">
-                      # <span class="code language-bash p-0 d-inline"></span>
-                    </p> -->
                     <p class="my-1">
                       $ <span class="code p-0 d-inline language-bash">php artisan serve</span><span class="blinking">|</span>
                     </p>
@@ -208,7 +208,7 @@
         <!-- Configuration -->
         <section class="slide py-5">
           <div class="wrap">
-            <h1 class="">Part 2: <a target="blank" href="https://laravel.com/docs/6.x/configuration">Configuration</a></h1>
+            <h1 class=""><a target="blank" href="https://laravel.com/docs/6.x/configuration">Configuration</a></h1>
             <hr class="m-3">
             <ul class="">
               <li class="mb-4">
@@ -250,6 +250,50 @@
                   </div>
                 </div>
               </div>
+            </ul>
+          </div>
+        </section>
+        <!-- Artisan -->
+        <section class="slide py-5">
+          <div class="wrap">
+            <h1 class="">Introduction to <a target="blank" href="https://laravel.com/docs/6.x/artisan">Artisan</a></h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  command-line interface that provides helpful commands that can assist in development
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-9">
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">php artisan list <span class="text-muted">// show available commands</span></span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan help [command] <span class="text-muted"></span></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  <code class="bg-gray">tinker</code> - allows you to interact with your entire Laravel application on the command line
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-9">
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">php artisan tinker</span>
+                    </p>
+                    <p class="my-2">
+                      >>> <span class="code p-0 d-inline language-bash">2 + 2</span> <small class="text-muted">//outputs 4</small>
+                    </p>
+                    <p class="my-2">
+                      >>> <span class="code p-0 d-inline language-bash">App::environment()</span> <small class="text-muted">//outputs current environment (e.g.'local')</small>
+                    </p>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </section>
