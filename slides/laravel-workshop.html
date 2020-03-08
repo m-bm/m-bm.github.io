@@ -39,7 +39,7 @@
   </head>
   <body>
     <main role="main">
-      <article id="webslides" class="vertical">
+      <article id="webslides" class="horizontal">
 
         <!-- Quick Guide
           - Each parent <section> in the <article id="webslides"> element is an individual slide.
@@ -74,7 +74,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
-
+        <!-- ####################################################################################################### -->
         <section class="slide py-5">
           <div class="wrap size-50">
             <div class="toc">
@@ -96,7 +96,7 @@
               </div>
           </div>
         </section>
-
+        <!-- ####################################################################################################### -->
         <section class="py-5">
           <div class="wrap">
             <h1 class="">Prerequisites</h1>
@@ -115,7 +115,7 @@
                   </li>
                   <li class="mt-4">
                     <span class="text-muted text-xs">
-                      * make sure <b>composer</b> and <b>php</b> is in your <code>$PATH</code>
+                      * make sure <code>composer</code> and <code>php</code> is in your <code>$PATH</code>
                     </span>
                     <div class="terminal-wrap mt-3 mx-0 fadeIn w-50">
                       <div class="terminal-title-bar m-0">
@@ -142,10 +142,11 @@
             </div>
           </div>
         </section>
+        <!-- ####################################################################################################### -->
 
-        <section class="slide py-5">
+        <section class="slide py-2">
           <div class="wrap">
-            <h1 class="">Installation</h1>
+            <h1 class="">Part 1: Installation</h1>
             <hr class="m-3">
             <ul class="">
               <li>
@@ -155,11 +156,8 @@
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-9">
-                    <!-- <p class="my-1 text-muted font-size-0-7">
-                      # <span class="code language-bash p-0 d-inline"></span>
-                    </p> -->
                     <p class="my-1">
-                      $ <span class="code p-0 d-inline language-bash">composer global require laravel/installer</span><span class="blinking">|</span>
+                      $ <span class="code p-0 d-inline language-bash">composer global require laravel/installer</span>
                     </p>
                   </div>
                 </div>
@@ -175,17 +173,39 @@
                       # <span class="code language-bash p-0 d-inline"></span>
                     </p> -->
                     <p class="my-1">
-                      $ <span class="code p-0 d-inline language-bash">laravel new laravel-workshop</span><span class="blinking">|</span>
+                      $ <span class="code p-0 d-inline language-bash">laravel new laravel-workshop</span>
                     </p>
                   </div>
                 </div>
-                <p class="my-1 text-muted font-size-1">
-                  <span class="p-0 d-inline text-muted">* make sure composer's system-wide vendor <code>bin</code> directory is in your <code>$PATH</code>, for more info, click <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">here</a></span>
+              </li>
+              <li>
+                <span class="font-size-1-5">
+                  Create a <a href="https://ultimatefosters.com/hosting/setup-a-virtual-host-in-windows-with-xampp-server/">virtual host</a> to <code>/public</code> directory or run the following command to run the built in php dev server.
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-9">
+                    <!-- <p class="my-1 text-muted font-size-0-7">
+                      # <span class="code language-bash p-0 d-inline"></span>
+                    </p> -->
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">php artisan serve</span><span class="blinking">|</span>
+                    </p>
+                  </div>
+                </div>
+                <p class="my-3 text-muted font-size-1-5">
+                  Then visit <code>localhost:8000</code> or <code>127.0.0.1:8000</code>
                 </p>
+              </li>
+              <li>
+                <span class="font-size-1-5">
+                  For more info, visit installation section of <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">Laravel docs</a>
+                </span>
               </li>
             </ul>
           </div>
         </section>
+        <!-- ####################################################################################################### -->
       </article>
     </main>
     <!--main-->
