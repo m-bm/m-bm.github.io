@@ -46,7 +46,7 @@
           - Vertical sliding = <article id="webslides" class="vertical">
           - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
         -->
-        <!-- Slide 1 -->
+        <!-- Introduction -->
         <section class="py-5">
           <!--.wrap = container (width: 90%) -->
           <div class="wrap aligncenter">
@@ -74,7 +74,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
-        <!-- ####################################################################################################### -->
+        <!-- Table of Contents -->
         <section class="slide py-5">
           <div class="wrap size-50">
             <div class="toc">
@@ -92,11 +92,17 @@
                       <span class="toc-page">02</span>
                     </a>
                   </li>
+                  <li>
+                    <a href="#slide=5" title="Go to Configuration">
+                      <span class="chapter">Configuration</span>
+                      <span class="toc-page">02</span>
+                    </a>
+                  </li>
                 </ol>
               </div>
           </div>
         </section>
-        <!-- ####################################################################################################### -->
+        <!-- Prerequisites -->
         <section class="py-5">
           <div class="wrap">
             <h1 class="">Prerequisites</h1>
@@ -115,7 +121,7 @@
                   </li>
                   <li class="mt-4">
                     <span class="text-muted text-xs">
-                      * make sure <code>composer</code> and <code>php</code> is in your <code>$PATH</code>
+                      * make sure <code class="bg-gray">composer</code> and <code class="bg-gray">php</code> is in your <code class="bg-gray">$PATH</code>
                     </span>
                     <div class="terminal-wrap mt-3 mx-0 fadeIn w-50">
                       <div class="terminal-title-bar m-0">
@@ -142,15 +148,14 @@
             </div>
           </div>
         </section>
-        <!-- ####################################################################################################### -->
-
+        <!-- Installation -->
         <section class="slide py-2">
           <div class="wrap">
-            <h1 class="">Part 1: Installation</h1>
+            <h1 class="">Part 1: <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">Installation</a></h1>
             <hr class="m-3">
             <ul class="">
               <li>
-                <span class="font-size-1-5">
+                <span class="font-size-1-9">
                   Download laravel installer using composer
                 </span>
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
@@ -163,7 +168,7 @@
                 </div>
               </li>
               <li>
-                <span class="font-size-1-5">
+                <span class="font-size-1-9">
                   Choose a folder and Initialize a new laravel project
                 </span>
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
@@ -179,8 +184,8 @@
                 </div>
               </li>
               <li>
-                <span class="font-size-1-5">
-                  Create a <a href="https://ultimatefosters.com/hosting/setup-a-virtual-host-in-windows-with-xampp-server/">virtual host</a> to <code>/public</code> directory or run the following command to run the built in php dev server.
+                <span class="font-size-1-9">
+                  Create a <a href="https://ultimatefosters.com/hosting/setup-a-virtual-host-in-windows-with-xampp-server/">virtual host</a> to <code class="bg-gray">/public</code> directory or run the following command to run the built in php dev server.
                 </span>
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
@@ -193,19 +198,61 @@
                     </p>
                   </div>
                 </div>
-                <p class="my-3 text-muted font-size-1-5">
-                  Then visit <code>localhost:8000</code> or <code>127.0.0.1:8000</code>
-                </p>
-              </li>
-              <li>
-                <span class="font-size-1-5">
-                  For more info, visit installation section of <a target="_blank" href="https://laravel.com/docs/6.x/installation#installing-laravel">Laravel docs</a>
+                <span class="my-3 text-muted font-size-1-9">
+                  Then visit <code class="bg-gray">localhost:8000</code> or <code class="bg-gray">127.0.0.1:8000</code>
                 </span>
               </li>
             </ul>
           </div>
         </section>
-        <!-- ####################################################################################################### -->
+        <!-- Configuration -->
+        <section class="slide py-5">
+          <div class="wrap">
+            <h1 class="">Part 2: <a target="blank" href="https://laravel.com/docs/6.x/configuration">Configuration</a></h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  <code class="bg-gray">env()</code> - used in accessing <code class="bg-gray">.env</code> file values <small>(e.g. <code class="bg-gray">env('APP_NAME', 'Laravel')</code>)</small>
+                </span>
+                <ul class="mt-4">
+                  <li class="font-size-1-5">
+                    <code class="bg-gray">.env</code> should only be accessed through configuration files
+                    and should not be included in application's source control
+                  </li>
+                </ul>
+              </li>
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  <code class="bg-gray">config()</code> - used in accessing config files under <code class="bg-gray">/config</code> directory
+                </span>
+                <ul class="mt-4">
+                  <li class="font-size-1-5">
+                    <small>usage: <code class="bg-gray">config('config_file.config_name')</code> (e.g. <code class="bg-gray">config('app.name')</code>)</small>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="list-group">
+              <div class="card my-2">
+                <div class="card-header p-0">
+                  <a href="#" class="btn btn-block text-left collapsed btn-lg text-lg"  style="display:block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h3>TODO:</h3>
+                  </a>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="collapseTwo">
+                  <div class="card-body text-lg">
+                    <ul class="mb-0 pl-4">
+                      <li class="list-group-item ml-0 font-size-1-5">
+                        <input type="checkbox" class="input input-lg"> Update <code class="bg-gray">.env</code> file based on you server's configurations
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </section>
       </article>
     </main>
     <!--main-->
