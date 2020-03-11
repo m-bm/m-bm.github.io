@@ -99,9 +99,27 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#slide=6" title="Go to Artisan">
-                      <span class="chapter">Introduction to Artisan</span>
+                    <a href="#slide=6" title="Go to Routing">
+                      <span class="chapter">Routing and Middleware</span>
                       <span class="toc-page">04</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=6" title="Go to Views">
+                      <span class="chapter">Views and Scaffolding</span>
+                      <span class="toc-page">05</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=6" title="Go to Scaffolding">
+                      <span class="chapter">Activity 1</span>
+                      <span class="toc-page">06</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=6" title="Go to Artisan">
+                      <span class="chapter">Artisan</span>
+                      <span class="toc-page">07</span>
                     </a>
                   </li>
                 </ol>
@@ -257,21 +275,152 @@
             </ul>
           </div>
         </section>
-        <!-- Artisan -->
+        <!-- Routing and Middleware-->
+        <section class="slide py-5 ">
+          <div class="wrap mx-0 w-100">
+            <h1 class=""><a target="blank" href="https://laravel.com/docs/6.x/routing">Routing</a> and <a target="blank" href="https://laravel.com/docs/6.x/middleware">Middleware</a></h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-1">
+                <span class="font-size-1-9">
+                  process where http requests are routed to the code that handles them
+                </span>
+              </li>
+            </ul>
+          <div class="grid">
+              <div class="column py-0">
+                <span class="code p-0 d-inline language-php">
+<pre class="" style="font-size:large;line-height:2">
+<span class="text-muted">// routes/web.php</span>
+Route::get('/', function () {
+  return view('welcome');
+}); <span class="text-muted">// route directly to view</span>
+Route::get('/test/index', 'TestController@index'}); <span class="text-muted">// route to controller</span>
+Route::post('/test/store', 'TestController@store'})->name('test.store');<span class="text-muted">// named</span>
+Route::show('/test/{id}/edit', 'TestController@edit'})->name('test.edit'); <span class="text-muted">// with parameters</span>
+
+Route::show('/test/{id}/edit', 'TestController@index'})
+  ->middleware('auth'); <span class="text-muted">// Protected (only logged in)</span>
+</pre>
+                </span>
+              </div>
+            </div>
+          <div class="grid">
+              <div class="column py-0">
+                <span class="code p-0 d-inline language-php">
+<pre class="" style="font-size:large;line-height:2">
+route('test.store') <span class="text-muted">// to access named routes in views and controller</span>
+route('test.index')->with('success', 'User added') <span class="text-muted">// route with a session data</span>
+redirect()->route('test.edit', ['id' => 1]) <span class="text-muted">// redirect to a route</span>
+</pre>
+                </span>
+            </div>
+            </div>
+          </div>
+        </section>
+        <!-- Views & Scaffolding -->
         <section class="slide py-5">
-          <div class="wrap">
-            <h1 class="">Introduction to <a target="blank" href="https://laravel.com/docs/6.x/artisan">Artisan</a></h1>
+          <div class="wrap mx-0 w-100">
+            <h1 class="">
+              <a target="blank" href="https://laravel.com/docs/6.x/views">Views</a> &
+              <a target="blank" href="https://laravel.com/docs/6.x/frontend#introduction">Scaffolding</a>
+            </h1>
             <hr class="m-3">
             <ul class="">
               <li class="mb-4">
                 <span class="font-size-1-9">
-                  command-line interface that provides helpful commands that can assist in development
+                  Views contain the HTML and uses <a target="blank" href="https://laravel.com/docs/6.x/blade">Blade</a> Syntax.
+                </span>
+                <div class="grid">
+                  <div class="column p-0">
+<pre>
+<span class="text-muted">&lt;!-- routes/web.php --></span>
+<span class="text-muted">// passing data to view</span>
+Route::get('/test/{name}', function ($name) {
+  $array = ['one', 'two', 'three'];
+
+  return view('test.index', [
+    'name' => $name,
+    'array' => $array
+  ]);
+})->name('test.index');
+</pre>
+                  </div>
+                  <div class="column p-0">
+<pre>
+<span class="text-muted">&lt;!-- Sample: resources/views/test/index.blade.php --></span>
+&lt;html>
+    &lt;body>
+        &lt;h1>Hello, {{ $name }}&lt;/h1>
+        @foreach ($iterable as $key => $value)
+          &lt;p>{{ $value }}&lt;/p>
+        @endforeach
+        &lt;a href="{{ route('test.index') }}">Reload page&lt;/a>
+    &lt;/body>
+&lt;/html>
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  Generate login and register scaffolding and compile assets (<span class="text-muted">// must be in virtual host to test</span>)
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn w-75">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-5">
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">composer require laravel/ui:^1.0 --dev</span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan ui bootstrap --auth</span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">npm install && npm run dev</span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan migrate</span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- Artisan -->
+        <section class="slide py-5" style="background-image:url(activity-1.png);background-repeat:no-repeat;background-position:center;background-size:cover">
+          <div class="wrap mx-0 w-100">
+          </div>
+        </section>
+        <!-- Artisan -->
+        <section class="slide py-5">
+          <div class="wrap mx-0 w-100">
+            <h1 class=""><a target="blank" href="https://laravel.com/docs/6.x/artisan">Artisan</a></h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  CLI that provides helpful commands that can assist in development
                 </span>
                 <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-9">
                     <p class="my-1">
                       $ <span class="code p-0 d-inline language-bash">php artisan list <span class="text-muted">// show available commands</span></span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller TestController  --resource<span class="text-muted"></span></span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:migration CreateTestTable<span class="text-muted"></span></span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:model Test<span class="text-muted"></span></span>
+                    </p>
+                    <p class="my-2">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:model Test --migration --controller<span class="text-muted"></span></span>
                     </p>
                     <p class="my-2">
                       $ <span class="code p-0 d-inline language-bash">php artisan help [command] <span class="text-muted"></span></span>
@@ -293,7 +442,10 @@
                       >>> <span class="code p-0 d-inline language-bash">2 + 2</span> <small class="text-muted">//outputs 4</small>
                     </p>
                     <p class="my-2">
-                      >>> <span class="code p-0 d-inline language-bash">App::environment()</span> <small class="text-muted">//outputs current environment (e.g.'local')</small>
+                      >>> <span class="code p-0 d-inline language-bash">App::environment()</span> <small class="text-muted">// outputs current environment (e.g.'local')</small>
+                    </p>
+                    <p class="my-2">
+                      >>> <span class="code p-0 d-inline language-bash">$user = User::find(1)</span> <small class="text-muted">// get the user with the id of 1</small>
                     </p>
                   </div>
                 </div>
