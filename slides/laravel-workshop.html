@@ -297,9 +297,11 @@ Route::get('/', function () {
 }); <span class="text-muted">// route directly to view</span>
 Route::get('/test/index', 'TestController@index'}); <span class="text-muted">// route to controller</span>
 Route::post('/test/store', 'TestController@store'})->name('test.store');<span class="text-muted">// named</span>
-Route::show('/test/{id}/edit', 'TestController@edit'})->name('test.edit'); <span class="text-muted">// with parameters</span>
+Route::get('/test/{id}/edit', 'TestController@edit'})->name('test.edit'); <span class="text-muted"></span>
+Route::put('/test/{id}/update', 'TestController@update'})->name('test.update'); <span class="text-muted"></span>
+Route::delete('/test/{id}/delete', 'TestController@delete'})->name('test.delete'); <span class="text-muted">// with parameters</span>
 
-Route::show('/test/{id}/edit', 'TestController@index'})
+Route::get('/test/{id}/edit', 'TestController@index'})
   ->middleware('auth'); <span class="text-muted">// Protected (only logged in)</span>
 </pre>
                 </span>
