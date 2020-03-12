@@ -520,7 +520,7 @@ Route::get('/users/{name}', function ($name) {
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-5">
                     <p class="my-1">
-                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller UserController  --resource<span class="text-muted"></span></span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller UserController  --resource <span class="text-muted">// CRUD-ready</span></span>
                     </p>
                   </div>
                 </div>
@@ -542,7 +542,6 @@ class UserController extends Controller
     }
     public function create() {}
     public function store(Request $request) {}
-    public function edit($id) {}
     public function update(Request $request, $id) {}
     public function destroy($id) {}
 }
@@ -568,6 +567,70 @@ class UserController extends Controller
   &lt;input type="first_name" value="{{ $user->first_name }}">
   &lt;input type="submit">
 &lt;/form>
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Models -->
+        <section class="slide py-5">
+          <div class="wrap mx-0 w-100">
+            <h1 class="">
+              <a target="blank" href="https://laravel.com/docs/6.x/eloquent">Eloquent & Models</a>
+            </h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  each database table has a corresponding "Model" which is used to interact with that table
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn w-75">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-5">
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:model User --migration</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="grid">
+                  <div class="column p-0">
+<pre>
+<span class="text-muted">&lt;!-- app/Http/Controllers/UserController.php --></span>
+use App\User;
+class UserController extends Controller
+{
+    public function store(Request $request) {
+      user = new User();
+      $user->create([
+        'name' => $request->name,
+        'email' => $request->email
+      ]; <span class="text-muted">// or $user->create($request->all());</span>
+      return redirect()->route('users.create')->with('status', 'User added');
+    }
+    public function update(Request $request, User $user) {
+      $user->update($request->all());
+      return redirect()->route('users.edit', ['id' => $user->id ])
+        ->with('status', 'User updated');
+    }
+}
+</pre>
+                  </div>
+                  <div class="column p-0">
+<pre>
+  <span class="text-muted">&lt;!-- app/User.php --></span>
+  namespace App;
+
+  use Illuminate\Database\Eloquent\Model;
+
+  class User extends Model
+  {
+    protected $fillable = [
+      'name', 'email', 'password',
+    ];
+  }
 </pre>
                   </div>
                 </div>
