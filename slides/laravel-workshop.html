@@ -38,6 +38,8 @@
     <meta name="theme-color" content="#333333">
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=619591822213872&autoLogAppEvents=1"></script>
     <main role="main">
       <article id="webslides" class="horizontal">
 
@@ -74,6 +76,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
+
         <!-- Table of Contents -->
         <section class="slide py-5">
           <div class="wrap size-50">
@@ -81,45 +84,57 @@
                 <h4>Table of Contents</h4>
                 <ol class="">
                   <li>
-                    <a href="#slide=3" title="Go to Prerequisites">
+                    <a href="#slide=1" title="Go to Prerequisites">
                       <span class="chapter">Prerequisites</span>
                       <span class="toc-page">01</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#slide=4" title="Go to Prerequisites">
+                    <a href="#slide=2" title="Go to Prerequisites">
                       <span class="chapter">Installation</span>
                       <span class="toc-page">02</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#slide=5" title="Go to Configuration">
+                    <a href="#slide=3" title="Go to Configuration">
                       <span class="chapter">Configuration</span>
                       <span class="toc-page">03</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#slide=6" title="Go to Routing">
-                      <span class="chapter">Routing and Middleware</span>
+                    <a href="#slide=4" title="Go to Routing">
+                      <span class="chapter">MVC Overview</span>
                       <span class="toc-page">04</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=5" title="Go to Routing">
+                      <span class="chapter">Routing and Middleware</span>
+                      <span class="toc-page">05</span>
                     </a>
                   </li>
                   <li>
                     <a href="#slide=6" title="Go to Views">
                       <span class="chapter">Views and Scaffolding</span>
-                      <span class="toc-page">05</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#slide=6" title="Go to Scaffolding">
-                      <span class="chapter">Activity 1</span>
                       <span class="toc-page">06</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#slide=6" title="Go to Artisan">
-                      <span class="chapter">Artisan</span>
+                    <a href="#slide=7" title="Go to Scaffolding">
+                      <span class="chapter">Activity 1</span>
                       <span class="toc-page">07</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=8" title="Go to Artisan">
+                      <span class="chapter">Artisan</span>
+                      <span class="toc-page">08</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#slide=9" title="Go to Artisan">
+                      <span class="chapter">Controllers</span>
+                      <span class="toc-page">09</span>
                     </a>
                   </li>
                 </ol>
@@ -255,7 +270,35 @@
                 </ul>
               </li>
             </ul>
-            <ul class="list-group">
+
+            <div class="grid">
+              <div class="column">
+<pre style="font-size: x-large">
+<span class="text-muted"># .env</span>
+APP_NAME="Laravel Workshop"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://laravel-workshop.test
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_workshop
+DB_USERNAME=root
+DB_PASSWORD=
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=test@gmail.com
+MAIL_PASSWORD=test1234
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=test@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+</pre>
+              </div>
+            </div>
+            <!-- <ul class="list-group">
               <div class="card my-2">
                 <div class="card-header p-0">
                   <a href="#" class="btn btn-block text-left collapsed btn-lg text-lg"  style="display:block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -272,9 +315,13 @@
                   </div>
                 </div>
               </div>
-            </ul>
+            </ul> -->
           </div>
         </section>
+        <!-- MVC overview -->
+        <section class="slide py-5" style="background-image:url(mvc.jpg);background-repeat:no-repeat;background-position:center;background-size:contain">
+        </section>
+
         <!-- Routing and Middleware-->
         <section class="slide py-5 ">
           <div class="wrap mx-0 w-100">
@@ -295,13 +342,13 @@
 Route::get('/', function () {
   return view('welcome');
 }); <span class="text-muted">// route directly to view</span>
-Route::get('/test/index', 'TestController@index'}); <span class="text-muted">// route to controller</span>
-Route::post('/test/store', 'TestController@store'})->name('test.store');<span class="text-muted">// named</span>
-Route::get('/test/{id}/edit', 'TestController@edit'})->name('test.edit'); <span class="text-muted"></span>
-Route::put('/test/{id}/update', 'TestController@update'})->name('test.update'); <span class="text-muted"></span>
-Route::delete('/test/{id}/delete', 'TestController@delete'})->name('test.delete'); <span class="text-muted">// with parameters</span>
+Route::get('/users/index', 'UserController@index'}); <span class="text-muted">// route to controller</span>
+Route::post('/users/store', 'UserController@store'})->name('users.store');<span class="text-muted">// named</span>
+Route::get('/users/{id}/edit', 'UserController@edit'})->name('users.edit'); <span class="text-muted"></span>
+Route::put('/users/{id}/update', 'UserController@update'})->name('users.update'); <span class="text-muted"></span>
+Route::delete('/users/{id}/destroy', 'UserController@destroy'})->name('users.destroy'); <span class="text-muted">// with parameters</span>
 
-Route::get('/test/{id}/edit', 'TestController@index'})
+Route::get('/users/{id}/edit', 'UserController@index'})
   ->middleware('auth'); <span class="text-muted">// Protected (only logged in)</span>
 </pre>
                 </span>
@@ -311,9 +358,9 @@ Route::get('/test/{id}/edit', 'TestController@index'})
               <div class="column py-0">
                 <span class="code p-0 d-inline language-php">
 <pre class="" style="font-size:large;line-height:2">
-route('test.store') <span class="text-muted">// to access named routes in views and controller</span>
-route('test.index')->with('success', 'User added') <span class="text-muted">// route with a session data</span>
-redirect()->route('test.edit', ['id' => 1]) <span class="text-muted">// redirect to a route</span>
+route('users.store') <span class="text-muted">// to access named routes in views and controller</span>
+route('users.index')->with('success', 'User added') <span class="text-muted">// route with a session data</span>
+redirect()->route('users.edit', ['id' => 1]) <span class="text-muted">// redirect to a route with a parameter</span>
 </pre>
                 </span>
             </div>
@@ -337,27 +384,27 @@ redirect()->route('test.edit', ['id' => 1]) <span class="text-muted">// redirect
                   <div class="column p-0">
 <pre>
 <span class="text-muted">&lt;!-- routes/web.php --></span>
-<span class="text-muted">// passing data to view</span>
-Route::get('/test/{name}', function ($name) {
+<span class="text-muted">// passing data to a view</span>
+Route::get('/users/{name}', function ($name) {
   $array = ['one', 'two', 'three'];
 
-  return view('test.index', [
+  return view('users.index', [
     'name' => $name,
     'array' => $array
   ]);
-})->name('test.index');
+})->name('users.index');
 </pre>
                   </div>
                   <div class="column p-0">
 <pre>
-<span class="text-muted">&lt;!-- Sample: resources/views/test/index.blade.php --></span>
+<span class="text-muted">&lt;!-- Sample: resources/views/users/index.blade.php --></span>
 &lt;html>
     &lt;body>
         &lt;h1>Hello, {{ $name }}&lt;/h1>
         @foreach ($iterable as $key => $value)
           &lt;p>{{ $value }}&lt;/p>
         @endforeach
-        &lt;a href="{{ route('test.index') }}">Reload page&lt;/a>
+        &lt;a href="{{ route('users.index') }}">Reload page&lt;/a>
     &lt;/body>
 &lt;/html>
 </pre>
@@ -370,20 +417,23 @@ Route::get('/test/{name}', function ($name) {
                 <span class="font-size-1-9">
                   Generate login and register scaffolding and compile assets (<span class="text-muted">// must be in virtual host to test</span>)
                 </span>
-                <div class="terminal-wrap my-3 mx-0 fadeIn w-75">
+                <div class="terminal-wrap my-3 mx-0 fadeIn">
                   <div class="terminal-title-bar m-0"></div>
                   <div class="terminal-text-body font-size-1-5">
                     <p class="my-1">
                       $ <span class="code p-0 d-inline language-bash">composer require laravel/ui:^1.0 --dev</span>
+                      <span class="text-muted">// require laravel ui package</span>
                     </p>
                     <p class="my-2">
                       $ <span class="code p-0 d-inline language-bash">php artisan ui bootstrap --auth</span>
+                      <span class="text-muted">// generate login and register and others</span>
                     </p>
                     <p class="my-2">
                       $ <span class="code p-0 d-inline language-bash">npm install && npm run dev</span>
+                      <span class="text-muted">// install npm dependencies and compile assets</span>
                     </p>
                     <p class="my-2">
-                      $ <span class="code p-0 d-inline language-bash">php artisan migrate</span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan migrate</span> <span class="text-muted">// run migrations</span>
                     </p>
                   </div>
                 </div>
@@ -391,10 +441,8 @@ Route::get('/test/{name}', function ($name) {
             </ul>
           </div>
         </section>
-        <!-- Artisan -->
-        <section class="slide py-5" style="background-image:url(activity-1.png);background-repeat:no-repeat;background-position:center;background-size:cover">
-          <div class="wrap mx-0 w-100">
-          </div>
+        <!-- Activity -->
+        <section class="slide py-5" style="background-image:url(activity-1.png);background-repeat:no-repeat;background-position:center;background-size:contain">
         </section>
         <!-- Artisan -->
         <section class="slide py-5">
@@ -413,16 +461,16 @@ Route::get('/test/{name}', function ($name) {
                       $ <span class="code p-0 d-inline language-bash">php artisan list <span class="text-muted">// show available commands</span></span>
                     </p>
                     <p class="my-2">
-                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller TestController  --resource<span class="text-muted"></span></span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller UserController  --resource<span class="text-muted"></span></span>
                     </p>
                     <p class="my-2">
-                      $ <span class="code p-0 d-inline language-bash">php artisan make:migration CreateTestTable<span class="text-muted"></span></span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:migration CreateUsersTable<span class="text-muted"></span></span>
                     </p>
                     <p class="my-2">
-                      $ <span class="code p-0 d-inline language-bash">php artisan make:model Test<span class="text-muted"></span></span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:model User<span class="text-muted"></span></span>
                     </p>
                     <p class="my-2">
-                      $ <span class="code p-0 d-inline language-bash">php artisan make:model Test --migration --controller<span class="text-muted"></span></span>
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:model User --migration --controller<span class="text-muted"></span></span>
                     </p>
                     <p class="my-2">
                       $ <span class="code p-0 d-inline language-bash">php artisan help [command] <span class="text-muted"></span></span>
@@ -455,6 +503,99 @@ Route::get('/test/{name}', function ($name) {
             </ul>
           </div>
         </section>
+
+        <!-- Controllers -->
+        <section class="slide py-5">
+          <div class="wrap mx-0 w-100">
+            <h1 class="">
+              <a target="blank" href="https://laravel.com/docs/6.x/controllers">Controllers</a>
+            </h1>
+            <hr class="m-3">
+            <ul class="">
+              <li class="mb-4">
+                <span class="font-size-1-9">
+                  Controllers can group related request handling logic into a single class
+                </span>
+                <div class="terminal-wrap my-3 mx-0 fadeIn w-75">
+                  <div class="terminal-title-bar m-0"></div>
+                  <div class="terminal-text-body font-size-1-5">
+                    <p class="my-1">
+                      $ <span class="code p-0 d-inline language-bash">php artisan make:controller UserController  --resource<span class="text-muted"></span></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="grid">
+                  <div class="column p-0">
+<pre>
+<span class="text-muted">&lt;!-- app/Http/Controllers/UserController.php --></span>
+use App\User;
+class UserController extends Controller
+{
+    public function index()
+    {
+        $users = User::all();
+        return view('users.index', ['users' => $users])
+    }
+    public function edit(User $user) // dependency injection
+    {
+        return view('users.edit', ['user' => $user]);
+    }
+    public function create() {}
+    public function store(Request $request) {}
+    public function edit($id) {}
+    public function update(Request $request, $id) {}
+    public function destroy($id) {}
+}
+</pre>
+                  </div>
+                  <div class="column p-0">
+<pre>
+<span class="text-muted">&lt;!-- Sample: resources/views/users/index.blade.php --></span>
+&lt;html>
+    &lt;body>
+        @foreach ($users as $user)
+          &lt;p>{{ $user->first_name }}&lt;/p>
+        @endforeach
+    &lt;/body>
+&lt;/html>
+</pre>
+<pre>
+<span class="text-muted">&lt;!-- Sample: resources/views/users/edit.blade.php --></span>
+&lt;form action="{{ route('users.update', ['id' => $user->id]) }}">
+  @csrf
+  @method('PUT')
+
+  &lt;input type="first_name" value="{{ $user->first_name }}">
+  &lt;input type="submit">
+&lt;/form>
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="py-5">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1>Call to Action</h1>
+            <hr>
+            <div class="grid">
+              <div class="column">
+                <div class="fb-page" data-href="https://www.facebook.com/sparkpointio/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/sparkpointio/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sparkpointio/">SparkPoint</a></blockquote></div>
+              </div>
+              <div class="column">
+                <a class="twitter-timeline" data-height="500" href="https://twitter.com/sparkpointio?ref_src=twsrc%5Etfw">Tweets by sparkpointio</a>
+              </div>
+              <div class="column">
+                <div class="fb-page" data-href="https://www.facebook.com/bicolit.org/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bicolit.org/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bicolit.org/">Bicol IT.org</a></blockquote></div>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
       </article>
     </main>
     <!--main-->
@@ -462,7 +603,8 @@ Route::get('/test/{name}', function ($name) {
     <!-- Required -->
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/webslides.js"></script>
-
+    <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
     <!-- <script defer src="../static/js/svg-icons.js"></script> -->
 
